@@ -14,6 +14,6 @@ angular.module('shortly.links', [])
   $scope.signout = function() {
     Auth.signout();
   };
-
+  
   $scope.getLinks();
 });
