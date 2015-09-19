@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, Auth) {
   $scope.data = {
     links: []
   };
@@ -10,6 +10,10 @@ angular.module('shortly.links', [])
       $scope.data.links = data;
     });
   };
-  console.log("Running LinksController code...");
+
+  $scope.signout = function() {
+    Auth.signout();
+  };
+
   $scope.getLinks();
 });

@@ -58,7 +58,13 @@ angular.module('shortly', [
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-    if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
+    // console.log('$routeChangeStart event triggered');
+    // console.log('next.$$route : ', next.$$route);
+    // console.log('next.$$route.authenticate : ', next.$$route.authenticate);
+    // console.log('!Auth.isAuth() : ', !Auth.isAuth());
+    // console.log('next is ', next);
+    if (next.$$route && !next.$$route.authenticate && !Auth.isAuth()) { // added ! before next.$$route.authenticate
+      // console.log('redirecting to /signin');
       $location.path('/signin');
     }
   });

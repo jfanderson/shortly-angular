@@ -1,7 +1,17 @@
+<div class='navigation'>
+<ul>
+  <li><a href='/#/links' class='index'>All Links</a></li>
+  <li><a href='/#/shorten' class='create'>Shorten</a></li>
+</ul>
+  <a href='/#/signin' class='logout'>Logout</a>
+</div>
+
 <div id='container'>
 <!-- Your code here -->
   <input type='text' name='url' ng-model='link.url'>
   <input type='submit' ng-click='addLink()'>
+  <div>{{ link.url }}</div> <!-- Not a valid URL or URL required-->
+  <div>{{ isValid() }}</div> <!-- Not a valid URL or URL required-->
 </div>
 
 
