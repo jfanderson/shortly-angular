@@ -14,6 +14,13 @@ angular.module('shortly', [
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
+    })
+    .when('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    })
+    .otherwise({
+      redirectTo: '/links'
     });
     // Your code here
 

@@ -2,5 +2,15 @@ angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, Links) {
   // Your code here
-  $scope.data = Links.retrieve();
+  $scope.data = {
+    links: []
+  };
+
+  $scope.getLinks = function() {
+    Links.retrieve().then(function(data) {
+      $scope.data.links = data;
+    });
+  };
+
+  $scope.getLinks();
 });

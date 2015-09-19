@@ -6,16 +6,16 @@ angular.module('shortly.services', [])
   var retrieve = function () {
     return $http({
       method: 'GET',
-      url: '/',
+      url: '/api/links'
     })
     .then(function (resp) {
-      return resp.data;
+      return resp.data; 
     });
-  }
+  };
 
   return {
     retrieve: retrieve
-  }
+  };
 
 })
 .factory('Auth', function ($http, $location, $window) {
